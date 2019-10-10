@@ -22,4 +22,9 @@ public class Opciones extends AppCompatActivity {
      Intent listBirth=new Intent(this,ListaCumple.class);
      startActivity(listBirth);
     }
+
+    public void AgregarContacto(View view){
+        Intent addContact = new Intent(this,AgregarContacto.class);
+        startActivity(addContact);
+    }
 }
