@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.labprogtest01">
 
     <application
@@ -8,6 +9,7 @@
         android:label="Agenda"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+<<<<<<< HEAD
         android:theme="@style/AppTheme">
         <activity android:name=".AgregarContacto"
             android:label="Agregar contacto"></activity>
@@ -20,6 +22,11 @@
         <activity
             android:name=".ListaCumple"
             android:label="Cumpleaños" ></activity>
+=======
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ListaContactos"></activity>
+>>>>>>> aaddf94e5231cebbdf916e4066bd692a4f423f35
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +34,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 
+=======
+        <activity
+            android:name=".Opciones"
+            android:label="Opciones" />
+        <activity
+            android:name=".ListaCumple"
+            android:label="@string/title_activity_lista_cumple"
+            android:theme="@style/AppTheme.NoActionBar" />
+>>>>>>> aaddf94e5231cebbdf916e4066bd692a4f423f35
     </application>
 
 </manifest>
