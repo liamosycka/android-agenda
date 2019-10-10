@@ -1,4 +1,4 @@
-package com.example.liam.labprogtest01;
+package com.labprogtest01;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

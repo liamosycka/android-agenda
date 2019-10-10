@@ -1,4 +1,4 @@
-package com.example.liam.labprogtest01;
+package com.labprogtest01;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.labprogtest01.R;
 
 public class MainActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE="com.example.liam.labprogtest01.MESSAGE";
