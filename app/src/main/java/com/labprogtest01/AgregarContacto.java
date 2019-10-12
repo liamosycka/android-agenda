@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -14,14 +15,17 @@ import java.util.Date;
 import java.util.Locale;
 
 public class AgregarContacto extends AppCompatActivity {
-    private EditText txtFechaNac,nombre,apellido,telefono;
+    private DatabaseHelper myDb;
+    private EditText txtFechaNac, editNombre, editApellido, editTelefono;
+    private Button btnAddData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_contacto);
+        myDb=new DatabaseHelper(this);
+        txtFechaNac = findViewById(R.id.fecha);
 
-    txtFechaNac = findViewById(R.id.fecha);
 
     txtFechaNac.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -42,11 +46,33 @@ public class AgregarContacto extends AppCompatActivity {
             },calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH));
             datePickerDialog.show();
         }
-    });{
+    });
 
-        }
+
+        editNombre = (EditText) findViewById(R.id.editTextNombre);
+        editApellido = (EditText) findViewById(R.id.editTextApellido);
+        editTelefono = (EditText) findViewById(R.id.editTextTelefono);
+        btnAddData = (Button) findViewById(R.id.buttonAgregar);
+
+
+
+
 
     }
 
+    public void addData(View view) {
+        btnAddData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean insert = myDb.insertData(editTelefono.getText().toString(), editNombre.getText().toString(), editApellido.getText().toString());
+                if (insert) {
+                    Toast.makeText(AgregarContacto.this, "Contacto agregado", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(AgregarContacto.this, "Error", Toast.LENGTH_LONG).show();
+                }
+            }
 
+
+        });
+    }
 }
