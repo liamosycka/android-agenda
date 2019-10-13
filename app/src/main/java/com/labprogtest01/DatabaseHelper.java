@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import java.sql.Date;
 
+import static android.os.Build.ID;
 import static android.widget.Toast.LENGTH_LONG;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -19,14 +20,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_TELNUM="TELNUMBER";
     public static final String COL_NAME="NAME";
     public static final String COL_SURNAME="SURNAME";
-    //public static final Date COL_BIRTH=null;
+    public static final String COL_BIRTH="BIRTH";
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, TELNUMBER TEXT, NAME TEXT, SURNAME TEXT)");
+        db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, TELNUMBER TEXT, NAME TEXT, SURNAME TEXT, BIRTH TEXT NOT NULL)");
 
 
 
@@ -38,14 +39,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
 
     }
-    public boolean insertData(String telNumber,String name, String surname){
+    public boolean insertData(String telNumber,String name, String surname, String birth){
         boolean insert=false;
         SQLiteDatabase db=this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
         contentValues.put(COL_TELNUM,telNumber);
         contentValues.put(COL_NAME,name);
         contentValues.put(COL_SURNAME,surname);
-       // contentValues.put(COL_BIRTH,birth);
+        contentValues.put(COL_BIRTH,birth);
         long result=db.insert(TABLE_NAME,null,contentValues);
         if(result!=-1){
             insert=true;
@@ -55,9 +56,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public void editarContacto(int idC, String nombre, String apellido, String telefono, String birth){
+       SQLiteDatabase db = this.getWritableDatabase();
+       ContentValues contentValues = new ContentValues();
+       contentValues.put(COL_NAME,nombre);
+       contentValues.put(COL_SURNAME,apellido);
+       contentValues.put(COL_TELNUM,telefono);
+       contentValues.put(COL_BIRTH,birth);
+       db.update(TABLE_NAME,contentValues, "ID = ?", new String[]{idC+""});
+
+    }
+
+
+    public void deleteContact(int idC){
+        SQLiteDatabase db=this.getWritableDatabase();
+        db.delete(TABLE_NAME,"ID = ?",new String[]{idC+""});
+    }
+
+
     public Cursor getAllData(){
         SQLiteDatabase db=this.getWritableDatabase();
         Cursor res= db.rawQuery("select * from "+TABLE_NAME,null);
+        return res;
+    }
+    public Cursor getInfoContacto(int idC){
+
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor res=db.rawQuery("select * from contact_table where ID='"+idC+"'",null);
         return res;
     }
 }
