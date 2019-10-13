@@ -13,7 +13,7 @@
         android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +25,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Apellido"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNombre" />
@@ -37,7 +37,7 @@
         android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Telefono"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editApellido" />
@@ -73,7 +73,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="Fecha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTelefono" />
@@ -81,13 +81,12 @@
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/callButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="332dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="156dp"
         android:clickable="true"
         android:onClick="llamarContacto"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toEndOf="@+id/borrar"
+        app:layout_constraintTop_toBottomOf="@+id/editTelefono"
         app:srcCompat="@android:drawable/stat_sys_phone_call" />
 </android.support.constraint.ConstraintLayout>

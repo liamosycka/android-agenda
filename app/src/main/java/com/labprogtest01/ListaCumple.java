@@ -36,7 +36,7 @@ public class ListaCumple extends AppCompatActivity {
                 do{
 
 
-                    String linea = cursor.getInt(0) + " " + cursor.getLong(1) + " " + cursor.getString(2) +" " + cursor.getString(3);
+                    String linea = cursor.getString(2) + " " + cursor.getString(3);
 
                     array[i] = linea;
                     i++;
