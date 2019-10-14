@@ -57,13 +57,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void editarContacto(int idC, String nombre, String apellido, String telefono, String birth){
-       SQLiteDatabase db = this.getWritableDatabase();
-       ContentValues contentValues = new ContentValues();
-       contentValues.put(COL_NAME,nombre);
-       contentValues.put(COL_SURNAME,apellido);
-       contentValues.put(COL_TELNUM,telefono);
-       contentValues.put(COL_BIRTH,birth);
-       db.update(TABLE_NAME,contentValues, "ID = ?", new String[]{idC+""});
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_NAME,nombre);
+        contentValues.put(COL_SURNAME,apellido);
+        contentValues.put(COL_TELNUM,telefono);
+        contentValues.put(COL_BIRTH,birth);
+        db.update(TABLE_NAME,contentValues, "ID = ?", new String[]{idC+""});
 
     }
 

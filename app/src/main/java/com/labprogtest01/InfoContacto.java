@@ -31,12 +31,12 @@ public class InfoContacto extends AppCompatActivity {
 
         Cursor cursor=myDb.getInfoContacto(idContacto);
 
-            cursor.moveToFirst();
+        cursor.moveToFirst();
 
-            editNombre.setText(cursor.getString(2));
-            editApellido.setText(cursor.getString(3));
-            editTelefono.setText(cursor.getString(1));
-            editFecha.setText(cursor.getString(4));
+        editNombre.setText(cursor.getString(2));
+        editApellido.setText(cursor.getString(3));
+        editTelefono.setText(cursor.getString(1));
+        editFecha.setText(cursor.getString(4));
 
 
 
@@ -55,11 +55,11 @@ public class InfoContacto extends AppCompatActivity {
     }
 
     public void editarContacto(View view){
-       int idContacto = obtenerId();
-       String nuevoNombre= editNombre.getText().toString();
-       String nuevoApellido= editApellido.getText().toString();
-       String nuevoTelefono= editTelefono.getText().toString();
-       String nuevaFecha= editFecha.getText().toString();
+        int idContacto = obtenerId();
+        String nuevoNombre= editNombre.getText().toString();
+        String nuevoApellido= editApellido.getText().toString();
+        String nuevoTelefono= editTelefono.getText().toString();
+        String nuevaFecha= editFecha.getText().toString();
 
         myDb.editarContacto(idContacto,nuevoNombre,nuevoApellido,nuevoTelefono,nuevaFecha);
         Toast.makeText(this,"Contacto editado",Toast.LENGTH_LONG).show();
@@ -71,9 +71,10 @@ public class InfoContacto extends AppCompatActivity {
     public int obtenerId(){
         Bundle bundle = getIntent().getExtras();
 
-        bundle.get("contacto");
+        String frase = bundle.getString("contacto");
+        String[] parte = frase.split(" ");
         /*Obtenemos el id del contacto seleccionado*/
-        int idContacto=Integer.parseInt(bundle.getString("contacto").substring(0,1));
+        int idContacto=Integer.parseInt(parte[0]);
         return idContacto;
     }
 
