@@ -16,7 +16,6 @@ import static android.widget.Toast.LENGTH_LONG;
 public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME="Contactos.db";
     public static final String TABLE_NAME="contact_table";
-    public static final String COL_ID="ID";
     public static final String COL_TELNUM="TELNUMBER";
     public static final String COL_NAME="NAME";
     public static final String COL_SURNAME="SURNAME";
@@ -27,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, TELNUMBER TEXT, NAME TEXT, SURNAME TEXT, BIRTH TEXT NOT NULL)");
+        db.execSQL("create table " + TABLE_NAME +" (TELNUMBER TEXT, NAME TEXT, SURNAME TEXT, BIRTH TEXT NOT NULL,  primary key(NAME,SURNAME))");
 
 
 

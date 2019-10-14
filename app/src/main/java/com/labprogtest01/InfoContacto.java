@@ -38,10 +38,10 @@ public class InfoContacto extends AppCompatActivity {
 
         cursor.moveToFirst();
 
-        editNombre.setText(cursor.getString(2));
-        editApellido.setText(cursor.getString(3));
-        editTelefono.setText(cursor.getString(1));
-        editFecha.setText(cursor.getString(4));
+        editNombre.setText(cursor.getString(1));
+        editApellido.setText(cursor.getString(2));
+        editTelefono.setText(cursor.getString(0));
+        editFecha.setText(cursor.getString(3));
 
 
 
