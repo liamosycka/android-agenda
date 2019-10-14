@@ -28,6 +28,7 @@ public class ListaContactos extends AppCompatActivity {
     private EditText searchContact;
     private ArrayAdapter<String> adapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +45,7 @@ public class ListaContactos extends AppCompatActivity {
                 do{
 
 
-                    String linea = cursor.getInt(0) + " " + cursor.getString(2) +" " + cursor.getString(3);
+                    String linea = cursor.getString(2) + " " + cursor.getString(3);
 
                     array[i] = linea;
                     i++;
@@ -79,6 +80,8 @@ public class ListaContactos extends AppCompatActivity {
 
 
         }
+
+
 
 
         final ListView listaC = (ListView) findViewById(R.id.listaContacto);

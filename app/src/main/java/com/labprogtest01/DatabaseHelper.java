@@ -56,33 +56,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public void editarContacto(int idC, String nombre, String apellido, String telefono, String birth){
+    public void editarContacto(String nombre, String apellido,String nuevoNombre, String  nuevoApellido, String telefono, String birth){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_NAME,nombre);
-        contentValues.put(COL_SURNAME,apellido);
+        contentValues.put(COL_NAME,nuevoNombre);
+        contentValues.put(COL_SURNAME,nuevoApellido);
         contentValues.put(COL_TELNUM,telefono);
         contentValues.put(COL_BIRTH,birth);
-        db.update(TABLE_NAME,contentValues, "ID = ?", new String[]{idC+""});
+        db.update(TABLE_NAME,contentValues, "NAME = ? AND SURNAME = ?", new String[]{nombre,apellido});
 
     }
 
 
-    public void deleteContact(int idC){
+    public void deleteContact(String nombre, String apellido){
         SQLiteDatabase db=this.getWritableDatabase();
-        db.delete(TABLE_NAME,"ID = ?",new String[]{idC+""});
+        db.delete(TABLE_NAME,"NAME = ? AND SURNAME = ?",new String[]{nombre,apellido});
     }
 
 
-    public Cursor getAllData(){
-        SQLiteDatabase db=this.getWritableDatabase();
-        Cursor res= db.rawQuery("select * from "+TABLE_NAME,null);
-        return res;
-    }
-    public Cursor getInfoContacto(int idC){
+
+    public Cursor getInfoContacto(String nombre,String apellido){
 
         SQLiteDatabase db=this.getWritableDatabase();
-        Cursor res=db.rawQuery("select * from contact_table where ID='"+idC+"'",null);
+        Cursor res=db.rawQuery("select * from contact_table where NAME = '"+nombre+"' and SURNAME = '"+apellido+"'",null);
         return res;
     }
 }
+

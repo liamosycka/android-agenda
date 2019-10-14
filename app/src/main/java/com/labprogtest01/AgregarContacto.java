@@ -50,6 +50,8 @@ public class AgregarContacto extends AppCompatActivity implements DatePickerDial
         editFecha=(TextView)findViewById(R.id.editFecha);
 
 
+
+
     }
 
     @Override
@@ -64,15 +66,26 @@ public class AgregarContacto extends AppCompatActivity implements DatePickerDial
     }
 
     public void addData(View view) {
-          boolean insert = myDb.insertData(editTelefono.getText().toString(), editNombre.getText().toString(), editApellido.getText().toString(),editFecha.getText().toString());
-          if (insert) {
-                    Toast.makeText(AgregarContacto.this, "Contacto agregado", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(AgregarContacto.this, "Error", Toast.LENGTH_LONG).show();
-                }
-        Intent volver = new Intent(AgregarContacto.this,Opciones.class);
-        startActivity(volver);
+        String nombre, apellido;
+        nombre = editNombre.getText().toString().trim();
+        apellido = editApellido.getText().toString().trim();
 
+        if (nombre.length() == 0) { Toast.makeText(AgregarContacto.this, "Debe agregar nombre", Toast.LENGTH_LONG).show();
+        }else if (apellido.length() == 0) {
+            Toast.makeText(AgregarContacto.this, "Debe agregar apellido", Toast.LENGTH_LONG).show();
+        }
+
+        if (nombre.length() != 0 && apellido.length() != 0) {
+            boolean insert = myDb.insertData(editTelefono.getText().toString(), nombre, apellido, editFecha.getText().toString());
+            if (insert) {
+                Toast.makeText(AgregarContacto.this, "Contacto agregado", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(AgregarContacto.this, "Error", Toast.LENGTH_LONG).show();
+            }
+            Intent volver = new Intent(AgregarContacto.this, Opciones.class);
+            startActivity(volver);
+
+        }
     }
 }
 

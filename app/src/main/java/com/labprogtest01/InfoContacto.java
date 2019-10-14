@@ -27,9 +27,14 @@ public class InfoContacto extends AppCompatActivity {
         editTelefono=(EditText)findViewById((R.id.editTelefono));
         editFecha=(EditText)findViewById(R.id.editFecha);
 
-        int idContacto = obtenerId();
+        Bundle bundle = getIntent().getExtras();
 
-        Cursor cursor=myDb.getInfoContacto(idContacto);
+        String frase = bundle.getString("contacto");
+        String[] parte = frase.split(" ");
+        String nombre = parte[0];
+        String apellido = parte[1];
+
+        Cursor cursor=myDb.getInfoContacto(nombre,apellido);
 
         cursor.moveToFirst();
 
@@ -47,24 +52,38 @@ public class InfoContacto extends AppCompatActivity {
     }
 
     public void eliminarContacto(View view){
-        int idContacto = obtenerId();
-        myDb.deleteContact(idContacto);
+        Bundle bundle = getIntent().getExtras();
+        String frase = bundle.getString("contacto");
+        String[] parte = frase.split(" ");
+        String nombre = parte[0];
+        String apellido = parte[1];
+        myDb.deleteContact(nombre,apellido);
         Toast.makeText(this,"Contacto Eliminado",Toast.LENGTH_LONG).show();
         Intent volver = new Intent(InfoContacto.this,Opciones.class);
         startActivity(volver);
     }
 
     public void editarContacto(View view){
-        int idContacto = obtenerId();
-        String nuevoNombre= editNombre.getText().toString();
-        String nuevoApellido= editApellido.getText().toString();
+        Bundle bundle = getIntent().getExtras();
+        String frase = bundle.getString("contacto");
+        String[] parte = frase.split(" ");
+        String nombre = parte[0];
+        String apellido = parte[1];
+        String nuevoNombre= editNombre.getText().toString().trim();
+        String nuevoApellido= editApellido.getText().toString().trim();
         String nuevoTelefono= editTelefono.getText().toString();
         String nuevaFecha= editFecha.getText().toString();
 
-        myDb.editarContacto(idContacto,nuevoNombre,nuevoApellido,nuevoTelefono,nuevaFecha);
-        Toast.makeText(this,"Contacto editado",Toast.LENGTH_LONG).show();
-        Intent volver = new Intent(InfoContacto.this,Opciones.class);
-        startActivity(volver);
+        if (nuevoNombre.length() == 0) { Toast.makeText(InfoContacto.this, "Debe agregar nombre", Toast.LENGTH_LONG).show();
+        }else if (nuevoApellido.length() == 0) {
+            Toast.makeText(InfoContacto.this, "Debe agregar apellido", Toast.LENGTH_LONG).show();
+        }
+        if(nuevoNombre.length()!=0 && nuevoApellido.length()!=0) {
+            myDb.editarContacto(nombre, apellido, nuevoNombre, nuevoApellido, nuevoTelefono, nuevaFecha);
+            Toast.makeText(this, "Contacto editado", Toast.LENGTH_LONG).show();
+            Intent volver = new Intent(InfoContacto.this, Opciones.class);
+            startActivity(volver);
+        }
 
     }
 
