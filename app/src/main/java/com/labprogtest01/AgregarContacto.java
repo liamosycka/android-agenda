@@ -64,19 +64,16 @@ public class AgregarContacto extends AppCompatActivity implements DatePickerDial
     }
 
     public void addData(View view) {
-        btnAddData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                boolean insert = myDb.insertData(editTelefono.getText().toString(), editNombre.getText().toString(), editApellido.getText().toString(),editFecha.getText().toString());
-                if (insert) {
+          boolean insert = myDb.insertData(editTelefono.getText().toString(), editNombre.getText().toString(), editApellido.getText().toString(),editFecha.getText().toString());
+          if (insert) {
                     Toast.makeText(AgregarContacto.this, "Contacto agregado", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(AgregarContacto.this, "Error", Toast.LENGTH_LONG).show();
                 }
-            }
-
-
-        });
+        Intent volver = new Intent(AgregarContacto.this,Opciones.class);
+        startActivity(volver);
 
     }
 }
+
+
