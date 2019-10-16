@@ -23,6 +23,9 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
+import static com.labprogtest01.DatabaseHelper.COL_NAME;
+import static com.labprogtest01.DatabaseHelper.COL_SURNAME;
+
 public class ListaContactos extends AppCompatActivity {
     private DatabaseHelper myDb;
     private EditText searchContact;
@@ -37,7 +40,7 @@ public class ListaContactos extends AppCompatActivity {
         SQLiteDatabase db = myDb.getReadableDatabase();
         searchContact=(EditText) findViewById(R.id.searchContact);
         if(db!=null){
-            Cursor cursor = db.rawQuery("select * from contact_table",null);
+            Cursor cursor = db.rawQuery("select * from contact_table order by "+COL_NAME+" , "+COL_SURNAME+" ",null);
             int cantidad = cursor.getCount();
             int i=0;
             String[] array = new String[cantidad];

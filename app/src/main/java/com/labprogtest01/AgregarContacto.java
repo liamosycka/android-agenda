@@ -69,18 +69,22 @@ public class AgregarContacto extends AppCompatActivity implements DatePickerDial
         String nombre, apellido;
         nombre = editNombre.getText().toString().trim();
         apellido = editApellido.getText().toString().trim();
+        String[] apellidos  = apellido.split(" ");
 
-        if (nombre.length() == 0) { Toast.makeText(AgregarContacto.this, "Debe agregar nombre", Toast.LENGTH_LONG).show();
+        if (nombre.length() == 0) {Toast.makeText(AgregarContacto.this, "Debe agregar nombre", Toast.LENGTH_LONG).show();
+
         }else if (apellido.length() == 0) {
             Toast.makeText(AgregarContacto.this, "Debe agregar apellido", Toast.LENGTH_LONG).show();
-        }
+        }else if(apellidos.length>2){
+        Toast.makeText(AgregarContacto.this, "maximo dos apellidos", Toast.LENGTH_LONG).show();
+    }
 
-        if (nombre.length() != 0 && apellido.length() != 0) {
+        if (nombre.length() != 0 && apellido.length() != 0 && apellidos.length<=2) {
             boolean insert = myDb.insertData(editTelefono.getText().toString(), nombre, apellido, editFecha.getText().toString());
             if (insert) {
                 Toast.makeText(AgregarContacto.this, "Contacto agregado", Toast.LENGTH_LONG).show();
             } else {
-                Toast.makeText(AgregarContacto.this, "Error", Toast.LENGTH_LONG).show();
+                Toast.makeText(AgregarContacto.this, "Ya tiene un contacto con el mismo nombre y apellido", Toast.LENGTH_LONG).show();
             }
             Intent volver = new Intent(AgregarContacto.this, Opciones.class);
             startActivity(volver);

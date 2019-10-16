@@ -15,6 +15,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+import static com.labprogtest01.DatabaseHelper.COL_NAME;
+import static com.labprogtest01.DatabaseHelper.COL_SURNAME;
+
 public class ListaCumple extends AppCompatActivity {
 
     private DatabaseHelper myDb;
@@ -28,7 +31,7 @@ public class ListaCumple extends AppCompatActivity {
         SimpleDateFormat format=new SimpleDateFormat("dd/MM");
         String fechaHoy=format.format(date);
         if(db!=null){
-            Cursor cursor = db.rawQuery("select * from contact_table where BIRTH like '"+fechaHoy+"%'",null);
+            Cursor cursor = db.rawQuery("select * from contact_table where BIRTH like '"+fechaHoy+"%' order by "+COL_NAME+" , "+COL_SURNAME+" ",null);
             int cantidad = cursor.getCount();
             int i=0;
             String[] array = new String[cantidad];
