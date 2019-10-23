@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="@string/ingreso_nombre"
         android:inputType="textPersonName"
-        android:hint="Nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,8 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:hint="@string/ingreso_apellido"
         android:inputType="textPersonName"
-        android:hint="Apellido"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNombre" />
@@ -36,8 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:ems="10"
+        android:hint="@string/ingreso_telefono"
         android:inputType="textPersonName"
-        android:hint="Telefono"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editApellido" />
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="156dp"
         android:onClick="eliminarContacto"
-        android:text="Eliminar"
+        android:text="@string/boton_eliminar"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintHorizontal_bias="0.263"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +62,7 @@
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
         android:onClick="editarContacto"
-        android:text="editar"
+        android:text="@string/boton_editar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTelefono" />
 
@@ -72,8 +72,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:hint="@string/ingreso_fecha"
         android:inputType="textPersonName"
-        android:hint="Fecha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTelefono" />

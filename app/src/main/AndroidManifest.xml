@@ -7,23 +7,23 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="Agenda"
+        android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".InfoContacto"></activity>
         <activity
             android:name=".AgregarContacto"
-            android:label="Agregar contacto" />
+            android:label="@string/agregar_contacto" />
         <activity
             android:name=".Opciones"
-            android:label="Opciones" />
+            android:label="@string/menu_opciones" />
         <activity
             android:name=".ListaContactos"
-            android:label="Contactos" />
+            android:label="@string/contactos" />
         <activity
             android:name=".ListaCumple"
-            android:label="Cumpleaños" />
+            android:label="@string/cumpleaños" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

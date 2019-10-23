@@ -60,9 +60,11 @@ public class AgregarContacto extends AppCompatActivity implements DatePickerDial
         c.set(Calendar.YEAR, year);
         c.set(Calendar.MONTH, mes);
         c.set(Calendar.DAY_OF_MONTH, dia);
-        String currentDate = DateFormat.getDateInstance(DateFormat.DATE_FIELD).format(c.getTime());
+        SimpleDateFormat format=new SimpleDateFormat("dd/MM");
+        String fechaCumpleaños=format.format(c.getTime());
+        //String currentDate = DateFormat.getDateInstance(DateFormat.DATE_FIELD).format(c.getTime());
         editFecha= (TextView) findViewById(R.id.editFecha);
-        editFecha.setText(currentDate);
+        editFecha.setText(fechaCumpleaños);
     }
 
     public void addData(View view) {

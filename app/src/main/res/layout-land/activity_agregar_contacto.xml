@@ -12,48 +12,51 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Nombre"
+        android:hint="@string/ingreso_nombre"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.153"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/editApellido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Apellido"
+        android:hint="@string/ingreso_apellido"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNombre"
-        app:layout_constraintVertical_bias="0.252" />
+        app:layout_constraintVertical_bias="0.252"
+        android:importantForAutofill="no" />
 
     <EditText
         android:id="@+id/editTelefono"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Telefono"
+        android:hint="@string/ingreso_telefono"
         android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toEndOf="@+id/editNombre"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.153" />
+        app:layout_constraintVertical_bias="0.153"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/editFecha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="DD/MM/YY"
+        android:hint="@string/ingreso_fecha"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.139"
@@ -66,7 +69,7 @@
         android:layout_width="120dp"
         android:layout_height="42dp"
         android:layout_marginTop="48dp"
-        android:text="Calendario"
+        android:text="@string/texto_calendario"
         app:layout_constraintBottom_toTopOf="@+id/buttonAgregar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.697"
@@ -79,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="addData"
-        android:text="Agregar"
+        android:text="@string/boton_agregar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.499"

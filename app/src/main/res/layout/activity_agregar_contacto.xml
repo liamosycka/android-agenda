@@ -13,10 +13,11 @@
         android:layout_marginTop="50dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Nombre"
+        android:hint="@string/ingreso_nombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/editApellido"
@@ -25,10 +26,11 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Apellido"
+        android:hint="@string/ingreso_apellido"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editNombre" />
+        app:layout_constraintTop_toBottomOf="@+id/editNombre"
+        android:importantForAutofill="no" />
 
 
     <EditText
@@ -38,10 +40,11 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="phone"
-        android:hint="Telefono"
+        android:hint="@string/ingreso_telefono"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editApellido" />
+        app:layout_constraintTop_toBottomOf="@+id/editApellido"
+        android:importantForAutofill="no" />
 
     <TextView
         android:id="@+id/editFecha"
@@ -49,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="130dp"
         android:layout_marginBottom="150dp"
-        android:hint="DD/MM/YY"
+        android:hint="@string/ingreso_fecha"
         app:layout_constraintBottom_toTopOf="@+id/buttonAgregar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.133"
@@ -64,7 +67,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="130dp"
         android:layout_marginBottom="150dp"
-        android:text="Calendario"
+        android:text="@string/texto_calendario"
         app:layout_constraintBottom_toTopOf="@+id/buttonAgregar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTelefono" />
@@ -75,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
         android:onClick="addData"
-        android:text="Agregar"
+        android:text="@string/boton_agregar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

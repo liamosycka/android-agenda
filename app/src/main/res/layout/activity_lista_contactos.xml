@@ -15,7 +15,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Buscar" />
+        android:hint="@string/texto_buscar"
+        android:importantForAutofill="no" />
 
     <ListView
         android:id="@+id/listaContacto"
