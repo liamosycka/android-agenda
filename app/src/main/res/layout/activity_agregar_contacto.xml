@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AgregarContacto">
+    tools:context=".AgregarContacto"
+    android:background="?attr/backgroundcolor">
 
     <EditText
         android:id="@+id/editNombre"
@@ -14,10 +15,12 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/ingreso_nombre"
+        android:textColorHint="?attr/hintcolor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        android:autofillHints=""
+        android:textColor="?attr/textcolor"/>
 
     <EditText
         android:id="@+id/editApellido"
@@ -30,7 +33,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNombre"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:textColor="?attr/textcolor"
+        android:textColorHint="?attr/hintcolor"/>
 
 
     <EditText
@@ -44,7 +49,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editApellido"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:textColor="?attr/textcolor"
+        android:textColorHint="?attr/hintcolor"/>
 
     <TextView
         android:id="@+id/editFecha"
@@ -57,7 +64,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toEndOf="@+id/buttonC"
-        app:layout_constraintTop_toBottomOf="@+id/editTelefono" />
+        app:layout_constraintTop_toBottomOf="@+id/editTelefono"
+        android:textColor="?attr/textcolor"
+        android:textColorHint="?attr/hintcolor"/>
 
     <Button
         android:id="@+id/buttonC"
@@ -70,8 +79,7 @@
         android:text="@string/texto_calendario"
         app:layout_constraintBottom_toTopOf="@+id/buttonAgregar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTelefono" />
-
+        app:layout_constraintTop_toBottomOf="@+id/editTelefono"/>
     <Button
         android:id="@+id/buttonAgregar"
         android:layout_width="wrap_content"

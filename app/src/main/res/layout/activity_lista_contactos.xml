@@ -6,7 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:focusable="true"
-    android:focusableInTouchMode="true">
+    android:focusableInTouchMode="true"
+    android:background="?attr/backgroundcolor"
+    android:textColor="?attr/textcolor"
+    android:textColorHint="?attr/hintcolor">
 
 
     <EditText
@@ -16,11 +19,15 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/texto_buscar"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:textColor="?attr/textcolor"
+        android:textColorHint="?attr/hintcolor"/>
 
     <ListView
         android:id="@+id/listaContacto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:textColor="?attr/textcolor"
+        android:textColorHint="?attr/hintcolor"/>
 
 </LinearLayout>

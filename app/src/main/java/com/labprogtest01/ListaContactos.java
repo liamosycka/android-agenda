@@ -57,7 +57,6 @@ public class ListaContactos extends AppCompatActivity {
             }
 
             adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,array);
-
             ListView lista = (ListView) findViewById(R.id.listaContacto);
             lista.setTextFilterEnabled(true);
             lista.setAdapter(adapter);

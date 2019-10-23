@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.labprogtest01.InfoContacto">
+    tools:context="com.labprogtest01.InfoContacto"
+    android:background="?attr/backgroundcolor">
 
 
     <EditText
@@ -19,7 +20,9 @@
         app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.098"
+        android:textColor="?attr/textcolor"
+        android:textColorHint="?attr/hintcolor"/>
 
     <EditText
         android:id="@+id/editApellido"
@@ -34,7 +37,9 @@
         app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNombre"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:textColor="?attr/textcolor"
+        android:textColorHint="?attr/hintcolor"/>
 
     <Button
         android:id="@+id/borrar"
@@ -62,7 +67,9 @@
         app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTelefono"
-        app:layout_constraintVertical_bias="0.053" />
+        app:layout_constraintVertical_bias="0.053"
+        android:textColor="?attr/textcolor"
+        android:textColorHint="?attr/hintcolor"/>
 
     <EditText
         android:id="@+id/editTelefono"
@@ -76,7 +83,9 @@
         app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.098"
+        android:textColor="?attr/textcolor"
+        android:textColorHint="?attr/hintcolor"/>
 
     <Button
         android:id="@+id/button2"

@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AgregarContacto">
+    tools:context=".AgregarContacto"
+    android:background="?attr/backgroundcolor">
 
 
     <EditText
@@ -20,7 +21,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.153"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:textColor="?attr/textcolor"
+        android:textColorHint="?attr/hintcolor"/>
 
     <EditText
         android:id="@+id/editApellido"
@@ -35,7 +38,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editNombre"
         app:layout_constraintVertical_bias="0.252"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:textColor="?attr/textcolor"
+        android:textColorHint="?attr/hintcolor"/>
 
     <EditText
         android:id="@+id/editTelefono"
@@ -50,7 +55,9 @@
         app:layout_constraintStart_toEndOf="@+id/editNombre"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.153"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:textColor="?attr/textcolor"
+        android:textColorHint="?attr/hintcolor"/>
 
     <TextView
         android:id="@+id/editFecha"
@@ -62,7 +69,9 @@
         app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintStart_toEndOf="@+id/buttonC"
         app:layout_constraintTop_toBottomOf="@+id/editTelefono"
-        app:layout_constraintVertical_bias="0.288" />
+        app:layout_constraintVertical_bias="0.288"
+        android:textColor="?attr/textcolor"
+        android:textColorHint="?attr/hintcolor"/>
 
     <Button
         android:id="@+id/buttonC"
